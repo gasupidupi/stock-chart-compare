@@ -2,7 +2,7 @@
 .vscode/
 
 # Output
-output.png
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

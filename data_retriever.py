@@ -1,7 +1,6 @@
 """Retrieves the data"""
-from stock import Stock
 import yfinance as yf
-import pandas as pd
+from stock import Stock
 
 
 class DataRetriever:

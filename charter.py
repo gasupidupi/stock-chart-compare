@@ -1,5 +1,4 @@
 """Generates the chart"""
-import pandas as pd
 import matplotlib.pyplot as plt
 
 
@@ -12,9 +11,11 @@ class Charter():
         plt.title("charts compared")
         colors = ["red","orange","yellow","green","blue","purple"]
         for stock in stocks:
-            plt.plot(stock.dataframe, color=colors.pop(), label=stock.symbol)
+            dtf = stock.dataframe
+            normalized_dtf = (dtf-dtf.min())/(dtf.max()-dtf.min())
+            plt.plot(normalized_dtf, color=colors.pop(), label=stock.symbol)
         plt.legend(loc="upper right")
-        plt.xlabel("time")
-        plt.ylabel("price")
+        plt.xlabel("time (days)")
+        plt.ylabel("price (normalized)")
         plt.tight_layout()
         plt.savefig("output.png")
