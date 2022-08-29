@@ -1,12 +1,12 @@
 """Stores information about a stock"""
 from dataclasses import dataclass
 from datetime import date
-import numpy as np
+import pandas as pd
 
 @dataclass
-class StockSnippet:
+class Stock:
     """Stores information about a stock"""
     symbol: str
     start_date: date
     end_date: date
-    data: np.ndarray
+    dataframe: pd.DataFrame
